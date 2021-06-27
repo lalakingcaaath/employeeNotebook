@@ -9,39 +9,47 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
     body {
-      background-color: gray;
+      background-color: white;
       font-family: Tahoma, sans-serif;
     }
-    h1 {
-      padding-bottom: 130px;
+
+    h2 {
+      padding-top: 130px;
     }
-    .positioning {
-      position: absolute;
-      left: 0;
-      bottom: 0;
+
+    .logo-image {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-top: -6px;
     }
   </style>
   <title>log-in</title>
 </head>
 
 <body>
-  <h1 style="text-align: center;">The Employees Notebook</h1>
+  <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="https://cdn.discordapp.com/attachments/858237264098361390/858394504000438313/unknown.png" width="45"
+          alt="" class="d-inline-block align-middle mr-2">
+        <span class="text-uppercase font-weight-bold">The Employees Notebook</span>
+      </a>
+  </nav>
   <h2 style="text-align: center;">Log In</h2>
   <div class="col d-flex justify-content-center">
-  <div class="form-group" style="width: 20rem">
-    <label for="exampleInputEmail1">Work ID:</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      placeholder="Enter ID">
-    <div class="form-group">
-      <label for="exampleInputPassword1">Password:</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-      <button type="submit" class="btn btn-primary"><a href = "homepage.html">Submit</a></button>
+    <div class="form-group" style="width: 20rem">
+      <label for="exampleInputEmail1">Work ID:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter ID">
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <b><a href="homepage.html">Submit</a></b>
+      </div>
     </div>
   </div>
-  </div>
-  <div class="positioning">
-    <img src="https://cdn.discordapp.com/attachments/858237264098361390/858394504000438313/unknown.png"
-    width="150" height="150"/>
-  </div>
 </body>
+
 </html>

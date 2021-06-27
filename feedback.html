@@ -9,16 +9,200 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <style>
     body {
-      background-color: gray;
+      background-color: white;
+    }
+
+    h1 {
+      padding-bottom: 130px;
+    }
+
+    .open-button {
+      background-color: #555;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 23px;
+      right: 28px;
+      width: 280px;
+    }
+
+    .chat-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+    }
+
+    .form-container {
+      max-width: 300px;
+      padding: 10px;
+      background-color: white;
+    }
+
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 200px;
+    }
+
+    .form-container textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    .form-container .btn {
+      background-color: #04AA6D;
+      color: white;
+      padding: 16px 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+
+    .form-container .cancel {
+      background-color: red;
+    }
+
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+
+    .date {
+      font-size: 11px
+    }
+
+    .comment-text {
+      font-size: 12px
+    }
+
+    .fs-12 {
+      font-size: 12px
+    }
+
+    .shadow-none {
+      box-shadow: none
+    }
+
+    .name {
+      color: #007bff
+    }
+
+    .cursor:hover {
+      color: blue
+    }
+
+    .cursor {
+      cursor: pointer
+    }
+
+    .textarea {
+      resize: none
     }
   </style>
   <title>Feedback</title>
 </head>
 
 <body>
-    <div class="form-group">  
-    
+  <nav class="navbar navbar-expand-lg py-3 navbar-dark bg-dark shadow-sm">
+    <div class="container">
+      <a href="#" class="navbar-brand">
+        <img src="https://cdn.discordapp.com/attachments/858237264098361390/858394504000438313/unknown.png" width="45"
+          alt="" class="d-inline-block align-middle mr-2">
+        <span class="text-uppercase font-weight-bold">The Employees Notebook</span>
+      </a>
+  </nav>
+  <button class="open-button" onclick="openForm()">Chat</button>
+  <div class="chat-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h2>Chat</h2>
 
-  </div> 
+      <label for="msg"><b>Message</b></label>
+      <textarea placeholder="How are you today?" name="msg" required></textarea>
+
+      <button type="submit" class="btn">Send</button>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+  <script>
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+  </script>
+  <div class="col d-flex justify-content-left">
+    <section class="py-2">
+      <div class="container py-2">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">How is work?</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="container py-2">
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">How are you feeling today?</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>Mood Board</option>
+            <option>Bad</option>
+            <option>Good</option>
+            <option>Happy</option>
+            <option>Productive</option>
+          </select>
+        </div>
+      </div>
+  </div>
+  <div class="container mt-5">
+    <div class="d-flex justify-content-left row">
+      <div class="col-md-8">
+        <div class="d-flex flex-column comment-section">
+          <div class="bg-white p-2">
+            <div class="d-flex flex-row user-info"><img class="rounded-circle"
+                src="https://media-exp3.licdn.com/dms/image/C4D03AQH2yVHYEx8V1A/profile-displayphoto-shrink_800_800/0/1615449971471?e=1629936000&height=180&t=Ps4i6G-7NGUp7nLxvVI5yi74t4dCFrgU2i38Rsj0YN8&v=beta&width=180"
+                width="40">
+              <div class="d-flex flex-column justify-content-start ml-2"><span
+                  class="d-block font-weight-bold name">Jericho Pio</span><span class="date text-black-50">Shared
+                  publicly - Jan 2020</span></div>
+            </div>
+            <div class="mt-2">
+              <p class="comment-text">Thanks for the developers that made The Employees Notebook happen. I get
+                productive in my work, and I really liked that you could share on what you are feeling today.</p>
+            </div>
+          </div>
+          <div class="bg-white">
+            <div class="d-flex flex-row fs-12">
+              <div class="like p-2 cursor"><i class="fa fa-thumbs-o-up"></i><span class="ml-1">Like</span></div>
+              <div class="like p-2 cursor"><i class="fa fa-commenting-o"></i><span class="ml-1">Comment</span></div>
+              <div class="like p-2 cursor"><i class="fa fa-share"></i><span class="ml-1">Share</span></div>
+            </div>
+          </div>
+          <div class="bg-light p-2">
+            <div class="d-flex flex-row align-items-start"><img class="rounded-circle"
+                src="https://media-exp3.licdn.com/dms/image/C4D03AQH2yVHYEx8V1A/profile-displayphoto-shrink_800_800/0/1615449971471?e=1629936000&height=180&t=Ps4i6G-7NGUp7nLxvVI5yi74t4dCFrgU2i38Rsj0YN8&v=beta&width=180"
+                width="40"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
+            <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Post
+                comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none"
+                type="button">Cancel</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <b><a href="homepage.html" style="position: absolute; bottom: 0pt; left: 0pt;">Go Back</a></b>
 </body>
+
 </html>
